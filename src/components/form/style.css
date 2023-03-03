@@ -88,4 +88,7 @@
 #copy {
     align-self: center;
     cursor: pointer;
+    font-size: 18px;
+    text-decoration: none;
+    color: black;
 }
