@@ -105,7 +105,12 @@ function Form() {
                 data && <div id='result'>
                     <span id='password'>{data}</span>
                     <div className='tooltip'>
-                        <a href='/' onClick={copy} id='copy' className="material-symbols-outlined" onMouseLeave={() => { setTooltipText('Copy to clipboard') }}>
+                        <a
+                            href='/'
+                            onClick={copy}
+                            id='copy'
+                            className="material-symbols-outlined"
+                            onMouseLeave={e => setTooltipText('Copy to clipboard')}>
                             <span className="tooltiptext" id="myTooltip">{tooltipText}</span>
                             content_copy
                         </a>
