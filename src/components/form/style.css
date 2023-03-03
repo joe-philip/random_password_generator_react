@@ -8,6 +8,7 @@
     display: flex;
     flex-direction: column;
     gap: 10px;
+    max-width: 90vw;
 }
 
 .form-group {
@@ -70,4 +71,9 @@
     100% {
         transform: rotate(360deg);
     }
+}
+
+#result {
+    max-width: 88vw;
+    word-wrap: break-word;
 }

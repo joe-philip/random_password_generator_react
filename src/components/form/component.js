@@ -95,7 +95,7 @@ function Form() {
                 />
                 <label>Symbols eg: !@#*</label>
             </div>
-            <div>{data}</div>
+            <div id='result'>{data}</div>
             <div className='form-group center-horizontal'>
                 <button id='submit-button' className='button-styles' onClick={generatePassword} disabled={loadingStatus}>
                     {
