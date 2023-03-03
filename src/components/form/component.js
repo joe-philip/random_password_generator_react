@@ -47,6 +47,10 @@ function Form() {
         );
         promise.then(() => { setLoadingStatus(false) })
     }
+    function copy(e) {
+        e.preventDefault();
+        navigator.clipboard.writeText(data);
+    }
     return (
         <form id='password-form'>
             <div className='form-group'>
@@ -97,7 +101,7 @@ function Form() {
             </div>
             {data && <div id='result'>
                 <span id='password'>{data}</span>
-                <span id='copy' class="material-symbols-outlined">content_copy</span>
+                <a href='/' onClick={copy} id='copy' class="material-symbols-outlined">content_copy</a>
             </div>}
             <div className='form-group center-horizontal'>
                 <button id='submit-button' className='button-styles' onClick={generatePassword} disabled={loadingStatus}>
