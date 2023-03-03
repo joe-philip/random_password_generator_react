@@ -95,7 +95,10 @@ function Form() {
                 />
                 <label>Symbols eg: !@#*</label>
             </div>
-            <div id='result'>{data}</div>
+            {data && <div id='result'>
+                <span id='password'>{data}</span>
+                <span id='copy' class="material-symbols-outlined">content_copy</span>
+            </div>}
             <div className='form-group center-horizontal'>
                 <button id='submit-button' className='button-styles' onClick={generatePassword} disabled={loadingStatus}>
                     {
@@ -104,7 +107,7 @@ function Form() {
                 </button>
                 <button id='reset-button' className='button-styles'>Reset</button>
             </div>
-        </form>
+        </form >
     );
 }
 

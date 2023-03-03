@@ -76,4 +76,16 @@
 #result {
     max-width: 88vw;
     word-wrap: break-word;
+    display: flex;
+    flex-direction: row;
+}
+
+#password {
+    max-width: 80vw;
+    text-align: justify;
+}
+
+#copy {
+    align-self: center;
+    cursor: pointer;
 }
