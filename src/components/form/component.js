@@ -47,9 +47,11 @@ function Form() {
         );
         promise.then(() => { setLoadingStatus(false) })
     }
+    var [tooltipText, setTooltipText] = useState('Copy to clipboard');
     function copy(e) {
         e.preventDefault();
         navigator.clipboard.writeText(data);
+        setTooltipText('Copied');
     }
     return (
         <form id='password-form'>
@@ -99,10 +101,17 @@ function Form() {
                 />
                 <label>Symbols eg: !@#*</label>
             </div>
-            {data && <div id='result'>
-                <span id='password'>{data}</span>
-                <a href='/' onClick={copy} id='copy' class="material-symbols-outlined">content_copy</a>
-            </div>}
+            {
+                data && <div id='result'>
+                    <span id='password'>{data}</span>
+                    <div className='tooltip'>
+                        <a href='/' onClick={copy} id='copy' className="material-symbols-outlined" onMouseLeave={() => { setTooltipText('Copy to clipboard') }}>
+                            <span className="tooltiptext" id="myTooltip">{tooltipText}</span>
+                            content_copy
+                        </a>
+                    </div>
+                </div>
+            }
             <div className='form-group center-horizontal'>
                 <button id='submit-button' className='button-styles' onClick={generatePassword} disabled={loadingStatus}>
                     {
