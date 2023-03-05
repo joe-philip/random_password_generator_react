@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import Card from './components/component';
+import Footer from './components/footer/component';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 
@@ -8,6 +9,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <Card />
+    <Footer />
   </React.StrictMode>
 );
 
