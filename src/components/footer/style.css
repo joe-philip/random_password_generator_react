@@ -1,0 +1,14 @@
+footer {
+    bottom: 0;
+    position: fixed;
+    min-height: 4vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer-link {
+    text-decoration: none;
+    color: rgb(50, 115, 255);
+}
