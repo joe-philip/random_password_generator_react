@@ -15,9 +15,9 @@ function Form() {
     }
     var [loadingStatus, setLoadingStatus] = useState(false);
     var [formData, setFormData] = useState({
-        'password-length': 8,
-        'upper-case': true,
-        'lower-case': true,
+        'password_length': 8,
+        'upper_case': true,
+        'lower_case': true,
         'numeric': true,
         'symbols': true,
     });
@@ -34,7 +34,7 @@ function Form() {
         setLoadingStatus(true);
         e.preventDefault();
         let promise = new Promise((resolve, reject) => {
-            axiosObj.post('/', formData).then(response => {
+            axiosObj.post('random_password', formData).then(response => {
                 setData(response.data.data);
                 resolve(true)
             }, error => {
@@ -61,25 +61,25 @@ function Form() {
                     type='number'
                     onChange={checkPasswordLength}
                     className='password-length'
-                    defaultValue={formData['password-length']}
-                    name='password-length'
+                    defaultValue={formData['password_length']}
+                    name='password_length'
                 />
             </div>
             <div className='form-group'>
                 <input
                     type='checkbox'
-                    defaultChecked={formData['upper-case']}
+                    defaultChecked={formData['upper_case']}
                     onChange={handleChange}
-                    name='upper-case'
+                    name='upper_case'
                 />
                 <label>Upper Case letters eg: ABC</label>
             </div>
             <div className='form-group'>
                 <input
                     type='checkbox'
-                    defaultChecked={formData['lower-case']}
+                    defaultChecked={formData['lower_case']}
                     onChange={handleChange}
-                    name='lower-case'
+                    name='lower_case'
                 />
                 <label>Lower Case letters eg: abc</label>
             </div>
